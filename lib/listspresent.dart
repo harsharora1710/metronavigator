@@ -18,9 +18,9 @@ class LongList extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(listOfItems[index].toString().toUpperCase(), style: const TextStyle(color: Colors.blueGrey,
+                    Text(listOfItems[index].toString().toUpperCase(), style: const TextStyle(color: Colors.red,
                   fontWeight: FontWeight.w400,
-                  fontSize: 20 ,fontStyle: FontStyle.italic ),)
+                  fontSize: 20 ,fontStyle: FontStyle.italic, ),)
                  //   Text('Sample subtitle for item $index'),
                   ],
                 ),

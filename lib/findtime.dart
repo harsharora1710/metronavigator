@@ -22,7 +22,7 @@ class _FindTimeState extends State<FindTime> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Time Required'),)
+      appBar: AppBar(title: const Text('Time Required'),backgroundColor: Colors.red,)
       ,
       body: Column(mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -33,7 +33,7 @@ class _FindTimeState extends State<FindTime> {
           const Text(
             '       Time Required',
             style: TextStyle(
-                color: Colors.blue,
+                color: Colors.black,
                 fontWeight: FontWeight.w500,
                 fontSize: 40),
           ),
@@ -41,8 +41,8 @@ class _FindTimeState extends State<FindTime> {
             height: 20,
           ),
 
-        Text('         $time mins', style: const TextStyle(color: Colors.blueGrey,
-            fontWeight: FontWeight.w400,
+        Text('         $time mins', style: const TextStyle(color: Colors.black,
+            fontWeight: FontWeight.w600,
             fontSize: 30 ,fontStyle: FontStyle.italic ),)
 
 

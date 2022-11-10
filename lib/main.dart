@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:metro_icons/metro_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'fare.dart';
 import 'route.dart';
 import 'metroMap.dart';
 void main() {
@@ -41,12 +40,12 @@ class _PageState extends State<Page> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3),
+    Timer(const Duration(seconds: 2),
             () =>
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder:
                     (context) =>
-                    SecondScreen()
+                    const SecondScreen()
                 )
             )
     );
@@ -55,10 +54,9 @@ class _PageState extends State<Page> {
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        child: FlutterLogo(size: MediaQuery
-            .of(context)
-            .size
-            .height)
+        child: const Image(
+          image: AssetImage('images/metro3.png'),
+        ),
     );
   }
   }
@@ -74,19 +72,25 @@ class _PageState extends State<Page> {
     @override
     Widget build(BuildContext context) {
       return Scaffold(
-        appBar: AppBar(backgroundColor: Colors.blue,
-          title: Center(child: const Text('METRO NAVIGATOR',style: TextStyle(fontWeight: FontWeight.bold),)),
+        appBar: AppBar(backgroundColor: Colors.red,
+          title: const Center(child: Text('METRO NAVIGATOR',style: TextStyle(fontWeight: FontWeight.bold),)),
         ),
         body: Column(
           //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+          const SizedBox(
+            height: 30,
+          ),
             Container(
                 height:400,
                 child: const Image(
                   //     height: 1000,
-                  image: AssetImage('images/metro1.jpg',),)),
+                  image: AssetImage('images/metro3.png',),)),
             //   const MyStatefulWidget(),
+            const SizedBox(
+              height: 40,
+            ),
             GestureDetector( onTap: (){
               Navigator.push(context, CupertinoPageRoute(builder: (context) {
                 return MetroMap();
@@ -120,14 +124,6 @@ class _PageState extends State<Page> {
           ],
         ),
       );
-
-
-
-
-
-
-
-
     }
   }
 
@@ -140,12 +136,12 @@ class BasicBox extends StatelessWidget {
   {
 
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Colors.blue),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(50),color: Colors.red),
       width: double.infinity,
       //  color: Colors.blue,
       padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.only(left: 70,right: 70),
-      child:  Center(child: Text(heading,style: const TextStyle(fontSize: 40))),
+      margin: const EdgeInsets.only(left: 50,right: 50),
+      child:  Center(child: Text(heading,style: const TextStyle(fontSize: 40,color: Colors.white,fontWeight: FontWeight.w700))),
     );
   }
 }
@@ -156,12 +152,12 @@ class BasicBox2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.blue),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.red),
       width: double.infinity,
       //  color: Colors.blue,
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(left: 50,right: 50),
-      child:  Center(child: Text(heading,style: const TextStyle(fontSize: 30))),
+      child:  Center(child: Text(heading,style: const TextStyle(fontSize: 30,color: Colors.white,fontWeight: FontWeight.w700))),
     );
   }
 }
