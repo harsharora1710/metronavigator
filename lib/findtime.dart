@@ -5,12 +5,13 @@ import 'route.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 class FindTime extends StatefulWidget {
-  FindTime({required this.path,required this.line1,required this.line2,required this.interchange,required this.time});
+  FindTime({required this.path,required this.line1,required this.line2,required this.interchange,required this.time,required this.sizett});
   var line1;
   var line2;
   var interchange;
   var time=1;
   var path;
+  var sizett;
 
 
   @override
@@ -33,8 +34,8 @@ class _FindTimeState extends State<FindTime> {
           const Text(
             '       Time Required',
             style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
+                color: Colors.red,
+                fontWeight: FontWeight.w600,
                 fontSize: 40),
           ),
           const SizedBox(
@@ -44,6 +45,23 @@ class _FindTimeState extends State<FindTime> {
         Text('         $time mins', style: const TextStyle(color: Colors.black,
             fontWeight: FontWeight.w600,
             fontSize: 30 ,fontStyle: FontStyle.italic ),)
+, const SizedBox(
+            height: 20,
+          ),
+          const Text(
+            '       Fare Required',
+            style: TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.w700,
+                fontSize: 40),
+          ),
+
+          const SizedBox(
+            height: 20,
+          ),
+          Text('         $sizee Rs', style: const TextStyle(color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontSize: 30 ,fontStyle: FontStyle.italic ),)
 
 
         ],

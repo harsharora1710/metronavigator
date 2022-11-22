@@ -33,6 +33,7 @@ var line1;
 var line2;
 var interchange;
 var path;
+var sizee;
 var stationsss;
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   TextEditingController nameController = TextEditingController();
@@ -63,13 +64,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     if (response.statusCode == 200) {
       var data= response.body.toString();
       var patth= jsonDecode(data)["path"];
+      var se=jsonDecode(data)["path"].length;
       var timee= jsonDecode(data)["time"].round();
       var lin2= jsonDecode(data)["line2"];
       var lin1= jsonDecode(data)["line1"];
       var ic= jsonDecode(data)["interchange"];
       stationsss=patth.length;
       print(data);
+      se=se/5;
+      print(se);
       path=patth;
+      sizee=se.round();
+      sizee=sizee*10;
       time=timee.round();
       line1=lin1;
       line2=lin2;
@@ -178,7 +184,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               child: GestureDetector( onTap: () {
                 setState(()  {
                   Navigator.push(context, CupertinoPageRoute(builder: (context) {
-                    return PathFinder(line1: line1,line2: line2,interchange: interchange,time: time.round(),path: path);
+                    return PathFinder(line1: line1,line2: line2,interchange: interchange,time: time.round(),path: path,sizett: sizee,);
                   },
                   ),
                   );
@@ -195,14 +201,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                child: GestureDetector( onTap: (){
                  setState(()  {
                 Navigator.push(context, CupertinoPageRoute(builder: (context) {
-                  return FindTime(line1: line1,line2: line2,interchange: interchange,time: time,path: path);
+                  return FindTime(line1: line1,line2: line2,interchange: interchange,time: time,path: path,sizett: sizee,);
                 },
                 ),
                 );
                  });
 
                 },
-                    child: BasicBox2(heading: 'Time Required',)
+                    child: BasicBox2(heading: 'Time/Fare ',)
                 ),
 
 

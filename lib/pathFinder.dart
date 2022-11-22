@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:wer/listspresent.dart';
 import 'route.dart';
 class PathFinder extends StatefulWidget {
-  PathFinder({required this.path,required this.line1,required this.line2,required this.interchange,required this.time});
+  PathFinder({required this.path,required this.line1,required this.line2,required this.interchange,required this.time,required this.sizett});
   var line1;
   var line2;
   var interchange;
   var time;
   var path;
+  var sizett;
 
   @override
   State<PathFinder> createState() => _PathFinderState();

@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
         "/first": (context) => MetroMap(),
-      //    "/second": (context) => FareCalc(),
           "/third": (context) => RouteProv(),
-        //  "/fourth": (context) => PathFinder()
+
         },
         title: 'Practicum',
 
     home: Page(),
+
     );
   }
 }
@@ -75,21 +75,22 @@ class _PageState extends State<Page> {
         appBar: AppBar(backgroundColor: Colors.red,
           title: const Center(child: Text('METRO NAVIGATOR',style: TextStyle(fontWeight: FontWeight.bold),)),
         ),
+
         body: Column(
           //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
             Container(
-                height:400,
+                height:350,
                 child: const Image(
                   //     height: 1000,
                   image: AssetImage('images/metro3.png',),)),
             //   const MyStatefulWidget(),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             GestureDetector( onTap: (){
               Navigator.push(context, CupertinoPageRoute(builder: (context) {
